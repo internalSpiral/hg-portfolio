@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - Creative Web Developer</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <!-- Avatar Section -->
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            
+            <!-- Status Bars -->
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        
+        <!-- Greeting Section -->
+        <div class="greeting-section">
+            <div class="greeting-card">
+                <div>
+                    <h1 class="greeting-header">Hey, I'm <span>H. Gwyn</span></h1>
+                    <p class="greeting-body">
+                        But feel free to call me Hannah or Gwyn. I'm a creative web developer who builds unique, efficient, and user-focused applications. Take a look around and check out what I've been working on.
+                    </p>
+                    <a href="#" class="resume-btn">Download My Resume</a>
+                </div>
+                <img src="https://pbs.twimg.com/media/F4q1-i8XQAAjwsL.png" alt="Cyno" class="cyno-image">
+            </div>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="categories-section">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="featured">Featured Projects</button>
+                <button class="category-tab" data-category="latest">Latest Work</button>
+                <button class="category-tab" data-category="blog">Blog Posts</button>
+            </div>
+
+            <!-- Projects Container -->
+            <div class="projects-container">
+                <div class="projects-track">
+                    <!-- Featured Projects -->
+                    <div class="project-card" data-category="featured">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Booking System</h3>
+                            <p class="project-body">
+                                A web-based booking system designed to manage equipment and facility reservations. Features include role-based access (admin/ users), calendar scheduling, and real-time availability tracking — ideal for streamlining organizational workflows.
+                            </p>
+                            <div class="project-footer">
+                                <a href="featured-work/projects-details.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="featured">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Expense Tracker</h3>
+                            <p class="project-body">
+                                A comprehensive financial management application that helps users track expenses, set budgets, and visualize spending patterns with interactive charts and reports.
+                            </p>
+                            <div class="project-footer">
+                                <a href="featured-work/projects-details2.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">Download App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="featured">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Minimalist Notes</h3>
+                            <p class="project-body">
+                                A distraction-free note-taking app with markdown support, cloud sync, and customizable themes. Perfect for writers, developers, and anyone who values simplicity.
+                            </p>
+                            <div class="project-footer">
+                                <a href="featured-work/projects-details3.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">Download App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Work -->
+                    <div class="project-card latest-work" data-category="latest">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Weather Dashboard</h3>
+                            <p class="project-body">
+                                Built a weather application that fetches data from multiple APIs to provide current conditions, forecasts, and severe weather alerts. Features include location search, temperature unit switching, and animated weather icons.
+                            </p>
+                            <div class="project-footer">
+                                <a href="latest-work/latest.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">View App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card latest-work" data-category="latest">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">E-commerce Dashboard</h3>
+                            <p class="project-body">
+                                A comprehensive admin dashboard for e-commerce businesses with sales analytics, inventory management, and customer insights. Built with React and Chart.js for data visualization.
+                            </p>
+                            <div class="project-footer">
+                                <a href="latest-work/latest2.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">View Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card latest-work" data-category="latest">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Recipe Finder</h3>
+                            <p class="project-body">
+                                An application that helps users discover recipes based on ingredients they have on hand. Features include meal planning, grocery lists, and nutritional information.
+                            </p>
+                            <div class="project-footer">
+                                <a href="latest-work/latest3.html" class="project-btn">Read More</a>
+                                <a href="#" class="project-btn-outline">Try It</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Posts -->
+                    <div class="project-card blog-post" data-category="blog">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Why I Switched from React to Svelte</h3>
+                            <p class="project-body">
+                                After three years with React, I decided to give Svelte a serious try. The results surprised me - not just in bundle size reduction (though 40% smaller is nice), but in developer happiness...
+                            </p>
+                            <div class="project-footer">
+                                <a href="blogposts/blog-post.html" class="project-btn">Read Post</a>
+                                <a href="#" class="project-btn-outline">Share</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card blog-post" data-category="blog">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">My First Hackathon Experience</h3>
+                            <p class="project-body">
+                                48 hours, 3 energy drinks, and 1 barely-functional prototype later - I emerged from my first hackathon both exhausted and exhilarated. Here's what I learned about rapid development under pressure...
+                            </p>
+                            <div class="project-footer">
+                                <a href="blogposts/blog-post2.html" class="project-btn">Read Post</a>
+                                <a href="#" class="project-btn-outline">Share</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card blog-post" data-category="blog">
+                        <div class="project-bg"></div>
+                        <div class="project-content">
+                            <h3 class="project-header">Building Accessible Web Apps</h3>
+                            <p class="project-body">
+                                Accessibility isn't just a checklist - it's a mindset. In this post, I share my journey learning about web accessibility and practical tips you can implement in your projects today...
+                            </p>
+                            <div class="project-footer">
+                                <a href="blogposts/blog-post3.html" class="project-btn">Read Post</a>
+                                <a href="#" class="project-btn-outline">Share</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

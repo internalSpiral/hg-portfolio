@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - Projects Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+
+        <!-- Hero Section -->
+        <div class="experience-hero">
+            <div class="hero-content">
+                <h1 class="experience-main-title">Professional Journey</h1>
+                <p class="experience-guide-text">Scroll to explore my career timeline</p>
+                <div class="projects-scroll-prompt">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-container">
+            <div class="animated-line"></div>
+            
+            <!-- Lisa Character -->
+            <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-lisa/sticker_4.png?e34ca29b631a9d4aa4b8dfea30210bbb&d=200x200" 
+                 alt="Lisa" 
+                 class="lisa-character"
+                 id="lisaIcon">
+
+            <!-- Timeline Items -->
+            <div class="timeline">
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-marker" data-year="2022 – 2023"></div>
+                    <div class="experience-card">
+                        <div class="timeline-date">2022 – 2023</div>
+                        <div class="timeline-role">Freelance Developer</div>
+                        <div class="timeline-company">@ Self-employed</div>
+                        <div class="timeline-desc">
+                            - Built 20+ WordPress sites<br>
+                            - SEO optimization services<br>
+                            - Mobile-first development
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-marker" data-year="2024"></div>
+                    <div class="experience-card">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-role">Web Developer Intern</div>
+                        <div class="timeline-company">@ PixelSprint Agency</div>
+                        <div class="timeline-desc">
+                            - Developed 15+ client websites<br>
+                            - Optimized site performance by 40%<br>
+                            - Implemented CMS solutions
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker" data-year="2025 – Present"></div>
+                    <div class="experience-card">
+                        <div class="timeline-date">2025 – Present</div>
+                        <div class="timeline-role">Frontend Developer</div>
+                        <div class="timeline-company">@ TechNova Solutions</div>
+                        <div class="timeline-desc">
+                            - Led development of responsive dashboard interface<br>
+                            - Implemented JWT authentication flow<br>
+                            - Mentored junior developers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Timeline Container */
+        .timeline-container {
+            position: relative;
+            min-height: 100vh;
+            padding: 120px 20px; /* Lower the timeline slightly */
+            overflow: hidden;
+        }
+
+        /* Animated Line */
+        .animated-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, 
+                var(--neon-lavender), 
+                #6a4c9c, 
+                var(--neon-lavender));
+            background-size: 100% 200%;
+            animation: flow 3s linear infinite;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        @keyframes flow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        /* Timeline Items */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+            z-index: 2;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Timeline Marker */
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--card-lavender);
+            border: 3px solid var(--neon-lavender);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .timeline-marker::after {
+            content: attr(data-year);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-gradient);
+            color: var(--text-white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-marker:hover::after {
+            opacity: 1;
+        }
+
+        .timeline-item:hover .timeline-marker {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 15px var(--neon-lavender);
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            width: 45%;
+            padding: 25px;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-card);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--neon-lavender), 
+                #894bee, 
+                var(--neon-lavender));
+            background-size: 200% 100%;
+            animation: flowBorder 3s linear infinite;
+        }
+
+        @keyframes flowBorder {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 0%; }
+        }
+
+        .timeline-item:nth-child(odd) .experience-card {
+            margin-left: 55%;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(148, 88, 255, 0.3);
+        }
+
+        /* Lisa Character */
+        .lisa-character {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 10;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .timeline-item {
+                margin-bottom: 80px;
+            }
+            
+            .experience-card {
+                width: 80%;
+                margin-left: 10% !important;
+            }
+            
+            .animated-line {
+                left: 20px;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
+            
+            .lisa-character {
+                left: 20px;
+                transform: translateX(0) translateY(-100%);
+            }
+        }
+    </style>
+
+    <script>
+        // Theme Toggle (from your original script.js)
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Lisa Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const lisa = document.getElementById('lisaIcon');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineContainer = document.querySelector('.timeline-container');
+            
+            // Initialize Lisa position at first marker
+            positionLisa(timelineItems[0]);
+            timelineItems[0].classList.add('active');
+
+            // Set up click handlers for timeline items
+            timelineItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Animate Lisa to this marker
+                    animateLisaToMarker(this);
+                    
+                    // Set active state
+                    timelineItems.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            function positionLisa(targetItem) {
+                const marker = targetItem.querySelector('.timeline-marker');
+                const markerRect = marker.getBoundingClientRect();
+                const containerRect = timelineContainer.getBoundingClientRect();
+                
+                const x = markerRect.left - containerRect.left + (markerRect.width / 2) - (lisa.offsetWidth / 2);
+                const y = markerRect.top - containerRect.top + (markerRect.height / 2) - (lisa.offsetHeight / 2);
+                
+                lisa.style.left = `${x}px`;
+                lisa.style.top = `${y}px`;
+            }
+
+            function animateLisaToMarker(targetItem) {
+                const marker = targetItem.querySelector('.timeline-marker');
+                const markerRect = marker.getBoundingClientRect();
+                const containerRect = timelineContainer.getBoundingClientRect();
+                
+                const x = markerRect.left - containerRect.left + (markerRect.width / 2) - (lisa.offsetWidth / 2);
+                const y = markerRect.top - containerRect.top + (markerRect.height / 2) - (lisa.offsetHeight / 2);
+                
+                // Move Lisa to the new position
+                lisa.style.left = `${x}px`;
+                lisa.style.top = `${y}px`;
+                
+                // Bounce animation
+                setTimeout(() => {
+                    lisa.style.transform = `translateX(-50%) translateY(-80%) scale(1.2)`;
+                    setTimeout(() => {
+                        lisa.style.transform = `translateX(-50%) translateY(-100%) scale(1)`;
+                    }, 200);
+                }, 800);
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const activeItem = document.querySelector('.timeline-item.active');
+                if (activeItem) {
+                    positionLisa(activeItem);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

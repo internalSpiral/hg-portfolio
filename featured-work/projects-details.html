@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - Projects Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="\styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="\index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="\projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="\work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="\my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="\contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+         <!-- Project Details Section -->
+         <section class="project-details">
+            <div class="project-hero">
+                <h1>Booking System</h1>
+                <p>A comprehensive solution for managing reservations and appointments</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Booking System">
+                </div>
+                
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span><strong>Completed:</strong> March 15, 2025</span>
+                        <span><strong>Technologies:</strong> JavaScript, Node.js, MongoDB</span>
+                    </div>
+                    
+                    <div class="project-description">
+                        <h2>About the Project</h2>
+                        <p>This booking system was designed to help small businesses manage their appointments and reservations more efficiently. The system features a clean, intuitive interface that allows both staff and customers to view availability in real-time.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Role-based access control (admin, staff, customer)</li>
+                            <li>Interactive calendar with drag-and-drop functionality</li>
+                            <li>Automated email confirmations and reminders</li>
+                            <li>Customizable service durations and pricing</li>
+                            <li>Reporting and analytics dashboard</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>The most challenging aspect was implementing the real-time availability updates across multiple users. I solved this using WebSockets to push updates to all connected clients whenever a booking was made or modified.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-btn">Live Demo</a>
+                        <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        .project-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .project-hero h1 {
+            font-size: 3rem;
+            color: var(--neon-lavender);
+            margin-bottom: 15px;
+        }
+
+        .project-hero p {
+            font-size: 1.2rem;
+            color: var(--light-lavender);
+        }
+
+        .project-content {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-image {
+            flex: 1;
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-lavender);
+        }
+
+        .project-meta span {
+            color: var(--light-lavender);
+        }
+
+        .project-description h2 {
+            font-size: 1.8rem;
+            color: var(--neon-lavender);
+            margin: 25px 0 15px;
+        }
+
+        .project-description h3 {
+            font-size: 1.4rem;
+            color: var(--text-white);
+            margin: 20px 0 10px;
+        }
+
+        .project-description p, 
+        .project-description ul {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--light-lavender);
+            margin-bottom: 15px;
+        }
+
+        .project-description ul {
+            padding-left: 20px;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                flex-direction: column;
+            }
+            
+            .project-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+    <script src="/script.js"></script>
+</body>
+</html>

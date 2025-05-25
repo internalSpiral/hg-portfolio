@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - My Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Blog Container */
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Blog Filters */
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-lavender);
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-card);
+            border-radius: 30px;
+            color: var(--text-white);
+            font-size: 0.9rem;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--neon-lavender);
+            box-shadow: 0 0 0 2px rgba(146, 128, 246, 0.3);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 15px;
+            background: transparent;
+            border: 1px solid var(--border-card);
+            border-radius: 30px;
+            color: var(--text-white);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .filter-tab.active {
+            background: var(--neon-lavender);
+            border-color: var(--neon-lavender);
+            color: var(--index-buttons);
+        }
+
+        .filter-tab:hover:not(.active) {
+            border-color: var(--neon-lavender);
+            color: var(--neon-lavender);
+        }
+
+        .archive-dropdown {
+            position: relative; /* Ensure it can have a z-index */
+            z-index: 2; /* Place it above the polka-dot background */
+        }
+
+        .archive-dropdown select {
+            padding: 8px 15px;
+            background: var(--text-white);
+            border: transparent;
+            border-radius: 30px;
+            color: var(--dark-grey); /* Updated text color */
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .archive-dropdown select:focus {
+            outline: none;
+            border-color: var(--light-lavender);
+        }
+
+        /* Blog Entries */
+        .blog-entries {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .blog-entry {
+            display: flex;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-card);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+        }
+
+        .blog-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .entry-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 90px;
+            padding: 15px;
+            background: var(--entry-date);
+            color: var(--index-buttons);
+            text-align: center;
+        }
+
+        .entry-date .day {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+            color: var(--index-buttons);
+        }
+
+        .entry-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .entry-date .year {
+            font-size: 0.8rem;
+            color: var(--index-buttons);
+        }
+
+        .entry-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .entry-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .entry-tags .tag {
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .entry-tags .coding {
+            background: var(--tag-coding-bg);
+            color: var(--tag-coding-color);
+            border: 1px solid var(--tag-coding-border);
+        }
+
+        .entry-tags .life {
+            background: var(--tag-life-bg);
+            color: var(--tag-life-color);
+            border: 1px solid var(--tag-life-border);
+        }
+
+        .entry-tags .resources {
+            background: var(--tag-resources-bg);
+            color: var(--tag-resources-color);
+            border: 1px solid var(--tag-resources-border);
+        }
+
+        .entry-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--neon-lavender);
+        }
+
+        .entry-excerpt {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .entry-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .read-time {
+            font-size: 0.8rem;
+            color: var(--light-lavender);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--neon-lavender);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: translateX(5px);
+        }
+
+        .read-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Pagination */
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .pagination-btn {
+            padding: 10px 20px;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-card);
+            border-radius: 30px;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+
+        .pagination-btn:not(.disabled):hover {
+            background: var(--neon-lavender);
+            border-color: var(--neon-lavender);
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-numbers {
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .page-numbers span {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-numbers span:not(.active):hover {
+            background: rgba(146, 128, 246, 0.2);
+        }
+
+        .page-numbers .active {
+            background: var(--neon-lavender);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .blog-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                min-width: 100%;
+            }
+
+            .filter-tabs {
+                justify-content: center;
+            }
+
+            .blog-entry {
+                flex-direction: column;
+            }
+
+            .entry-date {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 15px;
+                padding: 10px 15px;
+            }
+
+            .entry-date .day,
+            .entry-date .month,
+            .entry-date .year {
+                font-size: 1rem;
+            }
+
+            .entry-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-pagination {
+                flex-wrap: wrap;
+            }
+
+            .entry-title {
+                font-size: 1.2rem;
+            }
+
+            .entry-excerpt {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Blog Content -->
+        <section class="blog-container">
+            <!-- Blog Filters -->
+            <div class="blog-filters">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search entries...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">Coding</button>
+                    <button class="filter-tab">Life</button>
+                    <button class="filter-tab">Resources</button>
+                </div>
+                <div class="archive-dropdown">
+                    <select>
+                        <option value="all">All Time</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Blog Entries -->
+            <div class="blog-entries">
+                <!-- Entry 1 -->
+                <article class="blog-entry">
+                    <div class="entry-date">
+                        <span class="day">19</span>
+                        <span class="month">May</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-tags">
+                            <span class="tag coding">Coding</span>
+                            <span class="tag resources">Resources</span>
+                        </div>
+                        <h2 class="entry-title">Why I Switched from React to Svelte</h2>
+                        <p class="entry-excerpt">
+                            After three years with React, I decided to give Svelte a serious try. The results surprised me - not just in bundle size reduction (though 40% smaller is nice), but in developer happiness...
+                        </p>
+                        <div class="entry-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <a href="blogposts/blog-post.html" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entry 2 -->
+                <article class="blog-entry">
+                    <div class="entry-date">
+                        <span class="day">12</span>
+                        <span class="month">May</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-tags">
+                            <span class="tag life">Life</span>
+                        </div>
+                        <h2 class="entry-title">My First Hackathon Experience</h2>
+                        <p class="entry-excerpt">
+                            48 hours, 3 energy drinks, and 1 barely-functional prototype later - I emerged from my first hackathon both exhausted and exhilarated. Here's what I learned about rapid development under pressure...
+                        </p>
+                        <div class="entry-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                            <a href="blogposts/blog-post2.html" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entry 3 -->
+                <article class="blog-entry">
+                    <div class="entry-date">
+                        <span class="day">05</span>
+                        <span class="month">May</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-tags">
+                            <span class="tag coding">Coding</span>
+                        </div>
+                        <h2 class="entry-title">CSS Grid vs Flexbox: When to Use Each</h2>
+                        <p class="entry-excerpt">
+                            After building 15+ layouts with both, I've developed some clear guidelines for when each CSS layout method shines. The short answer? You'll probably need both, but here's how to decide which to reach for first...
+                        </p>
+                        <div class="entry-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <a href="blogposts/blog-post3.html" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entry 4 -->
+                <article class="blog-entry">
+                    <div class="entry-date">
+                        <span class="day">28</span>
+                        <span class="month">Apr</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-tags">
+                            <span class="tag resources">Resources</span>
+                        </div>
+                        <h2 class="entry-title">My Essential VS Code Extensions</h2>
+                        <p class="entry-excerpt">
+                            After trying dozens of extensions, these 8 have earned permanent spots in my toolkit. From obscure productivity boosters to must-have debugging aids, here's what actually improves my daily workflow...
+                        </p>
+                        <div class="entry-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 4 min read</span>
+                            <a href="#" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entry 5 -->
+                <article class="blog-entry">
+                    <div class="entry-date">
+                        <span class="day">20</span>
+                        <span class="month">Apr</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="entry-tags">
+                            <span class="tag life">Life</span>
+                            <span class="tag coding">Coding</span>
+                        </div>
+                        <h2 class="entry-title">How I Structure My Learning Projects</h2>
+                        <p class="entry-excerpt">
+                            Tutorial hell is real, but escape is possible. My project-based learning approach helped me transition from following guides to building original work. Here's my template for effective skill-building projects...
+                        </p>
+                        <div class="entry-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="#" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="blog-pagination">
+                <button class="pagination-btn disabled">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="page-numbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>...</span>
+                    <span>5</span>
+                </div>
+                <button class="pagination-btn">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

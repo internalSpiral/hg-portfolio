@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - Projects Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        .projects-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--card-gradient);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .project-card-content h2 {
+            font-size: 1.5rem;
+            color: var(--neon-lavender);
+        }
+
+        .project-card-content p {
+            font-size: 0.9rem;
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .project-card-content span {
+            background: rgba(146, 128, 246, 0.2);
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            white-space: normal; /* Allows text to wrap */
+            word-wrap: break-word; /* Breaks long words if necessary */
+            display: inline-block;
+        }
+
+        .project-card-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .project-btn {
+            padding: 10px 20px;
+            background: var(--neon-lavender);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .project-btn-outline {
+            padding: 10px 20px;
+            border: 1px solid var(--text-white);
+            color: var(--text-white);
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .project-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-card-image {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .project-card-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .project-card-content p {
+                font-size: 0.8rem;
+            }
+
+            .project-btn, .project-btn-omutline {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Title Section -->
+        <div class="experience-hero">
+            <div class="hero-content">
+                <h1 class="experience-main-title">My Projects</h1>
+                <p class="experience-guide-text">A collection of my coding adventures and creative solutions</p>
+                <div class="projects-scroll-prompt">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-card-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-card-content">
+                        <h2>Booking System</h2>
+                        <p>Completed: 3/15/2025 | Tags: <span>DOM Manipulation</span>, <span>Local Storage</span>, <span>Responsive Design</span></p>
+                        <p>Designed a booking system for small businesses to manage appointments. Focused on creating an intuitive UI with real-time availability checks and automated confirmation emails.</p>
+                        <div class="project-card-buttons">
+                            <a class="project-btn" onclick="alert('Pretend this is the actual project or demo!')">View Project</a>
+                            <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-card-image" style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-card-content">
+                        <h2>Minimalist Notes App</h2>
+                        <p>Completed: 4/2/2025 | Tags: <span>React</span>, <span>Firebase</span>, <span>Material UI</span></p>
+                        <p>Created a distraction-free note taking application with markdown support and cloud synchronization. The app features a minimalist design with focus mode, keyboard shortcuts, and organization through tags and folders.</p>
+                        <div class="project-card-buttons">
+                            <a class="project-btn" onclick="alert('Pretend this is the actual project or demo!')">Try App</a>
+                            <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-card-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-card-content">
+                        <h2>Expense Tracker</h2>
+                        <p>Completed: 2/28/2025 | Tags: <span>JavaScript</span>, <span>Chart.js</span>, <span>CRUD Operations</span></p>
+                        <p>Developed a personal finance tracker with visual analytics. Users can categorize expenses, set budgets, and view spending patterns through interactive charts. The app includes monthly reports and export functionality for financial planning.</p>
+                        <div class="project-card-buttons">
+                            <a class="project-btn" onclick="alert('Pretend this is the actual project or demo!')">Live Demo</a>
+                            <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-card-image" style="background-image: url('https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-card-content">
+                        <h2>Weather Dashboard</h2>
+                        <p>Completed: 5/10/2025 | Tags: <span>API Integration</span>, <span>Geolocation</span>, <span>Dynamic UI</span></p>
+                        <p>Built a weather application that fetches data from multiple APIs to provide current conditions, forecasts, and severe weather alerts. Features include location search, temperature unit switching, and animated weather icons that reflect current conditions.</p>
+                        <div class="project-card-buttons">
+                            <a class="project-btn" onclick="alert('Pretend this is the actual project or demo!')">View App</a>
+                            <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="project-card-image" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-card-content">
+                        <h2>Recipe Finder</h2>
+                        <p>Completed: 4/22/2025 | Tags: <span>Vue.js</span>, <span>REST API</span>, <span>Filtering</span></p>
+                        <p>Designed a recipe discovery platform with advanced filtering options. Users can search by ingredients, dietary restrictions, and cook time. The app includes a meal planner feature and the ability to save favorite recipes to a personal collection.</p>
+                        <div class="project-card-buttons">
+                            <a class="project-btn" onclick="alert('Pretend this is the actual project or demo!')">Try It</a>
+                            <a href="https://github.com/internalSpiral" target="_blank" class="project-btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
