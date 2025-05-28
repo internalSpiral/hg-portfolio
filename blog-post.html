@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/nav-logo.png" type="image/x-icon">
+    <title>H. Gwyn - Projects Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="avatar-container">
+            <div class="avatar-name">Hannah Gwyneth</div>
+            <div class="avatar-title">Lvl. 0 Web Developer</div>
+            <img src="https://i.pinimg.com/originals/3e/a9/cd/3ea9cde6a4ac10bc429f37dcbf3e1da3.gif" alt="Hannah Gwyneth" class="avatar">
+            <div class="status-bar">
+                <span class="status-label">HP</span>
+                <span class="status-value">70/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill"></div>
+            </div>
+            
+            <div class="status-bar">
+                <span class="status-label">MP</span>
+                <span class="status-value">50/100</span>
+            </div>
+            <div class="status-meter">
+                <div class="status-fill mp-fill"></div>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="projects.html" class="nav-item">
+                <i class="fas fa-code"></i> Projects
+            </a>
+            <a href="work-experience.html" class="nav-item">
+                <i class="fas fa-briefcase"></i> Work Experience
+            </a>
+            <a href="my-blog.html" class="nav-item">
+                <i class="fas fa-blog"></i> My Blog
+            </a>
+            <a href="contact-me.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 H. Gwyn. All Rights Reserved.
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="polka-dots"></div>
+        
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="money-counter">
+                <i class="fas fa-coins" style="color: var(--text-white);"></i> 10,000G
+            </div>
+            <div class="level-bar">
+                <div class="level-progress">
+                    <div class="level-fill"></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/internalSpiral" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h-gwyn/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/h_gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/h.gwyn_" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+         <!-- Blog Post Section -->
+         <article class="blog-post">
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-date">May 19, 2025</span>
+                    <span class="post-tag coding">Coding</span>
+                    <span class="post-tag resources">Resources</span>
+                </div>
+                <h1 class="post-title">Why I Switched from React to Svelte</h1>
+                <div class="post-author">
+                    <img src="https://media.tenor.com/Bqs8_s--JbYAAAAm/eri-dola-sticker.webp" alt="H. Gwyn" class="author-avatar">
+                    <div class="author-info">
+                        <span class="author-name">H. Gwyn</span>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="post-content">
+                <p>After three years with React, I decided to give Svelte a serious try. What began as curiosity turned into a complete shift in my frontend development approach. The results surprised me - not just in bundle size reduction (though 40% smaller is nice), but in developer happiness and productivity.</p>
+                
+                <h2>The Tipping Point</h2>
+                <p>It wasn't any single React pain point that pushed me to explore alternatives, but rather the cumulative weight of:</p>
+                <ul>
+                    <li>Boilerplate for state management (even with hooks)</li>
+                    <li>Performance optimization rituals (useMemo, useCallback)</li>
+                    <li>Build tool complexity (despite improvements in Vite)</li>
+                </ul>
+                
+                <h2>Svelte's Revelations</h2>
+                <p>My first "aha" moment came when I built a simple counter component. In React:</p>
+                
+                <pre><code>function Counter() {
+    const [count, setCount] = useState(0);
+    return (
+        &lt;button onClick={() => setCount(c => c + 1)}&gt;
+            Clicked {count} times
+        &lt;/button&gt;
+    );
+}</code></pre>
+                
+                <p>In Svelte:</p>
+                
+                <pre><code>&lt;script&gt;
+    let count = 0;
+&lt;/script&gt;
+
+&lt;button on:click={() => count++}&gt;
+    Clicked {count} times
+&lt;/button&gt;</code></pre>
+                
+                <p>The simplicity was striking. No virtual DOM diffing, no hooks rules, just direct DOM updates compiled away at build time.</p>
+                
+                <h2>Unexpected Benefits</h2>
+                <p>Beyond the syntax, I discovered:</p>
+                
+                <h3>1. Stores Are Just Variables</h3>
+                <p>Svelte stores feel like using regular variables, without Redux's ceremony or Context's provider nesting.</p>
+                
+                <h3>2. Scoped Styles That Just Work</h3>
+                <p>After years of CSS-in-JS solutions, native scoped styles felt liberating.</p>
+                
+                <h3>3. Smaller Bundle, Faster Load</h3>
+                <p>My production bundles consistently came in 30-50% smaller than equivalent React apps.</p>
+                
+                <h2>When I Still Reach for React</h2>
+                <p>I haven't abandoned React completely. It still shines for:</p>
+                <ul>
+                    <li>Large teams where React's explicitness helps</li>
+                    <li>Projects requiring specific React libraries</li>
+                    <li>Existing codebases where rewrite costs outweigh benefits</li>
+                </ul>
+                
+                <p>But for new projects, especially solo or small team efforts, Svelte has become my default choice. The developer experience is simply more enjoyable, and the performance benefits are real.</p>
+            </div>
+            
+            <footer class="post-footer">
+                <div class="post-actions">
+                    <button class="like-btn"><i class="far fa-heart"></i> Like</button>
+                    <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                </div>
+                <div class="post-navigation">
+                    <a href="#" class="prev-post"><i class="fas fa-arrow-left"></i> Previous Post</a>
+                    <a href="#" class="next-post">Next Post <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </footer>
+        </article>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .post-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .post-date {
+            color: var(--light-lavender);
+        }
+
+        .post-tag {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .post-tag.coding {
+            background: var(--tag-coding-bg);
+            color: var(--tag-coding-color);
+            border: 1px solid var(--tag-coding-border);
+        }
+
+        .post-tag.resources {
+            background: var(--tag-resources-bg);
+            color: var(--tag-resources-color);
+            border: 1px solid var(--tag-resources-border);
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            color: var(--neon-lavender);
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: bold;
+        }
+
+        .read-time {
+            font-size: 0.8rem;
+            color: var(--light-lavender);
+        }
+
+        .post-content {
+            line-height: 1.8;
+            color: var(--text-white);
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .post-content h2 {
+            font-size: 1.8rem;
+            color: var(--neon-lavender);
+            margin: 40px 0 20px;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-white);
+            margin: 30px 0 15px;
+        }
+
+        .post-content ul, 
+        .post-content ol {
+            margin-bottom: 25px;
+            padding-left: 25px;
+        }
+
+        .post-content li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background: var(--card-lavender);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--light-lavender);
+        }
+
+        .post-footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-lavender);
+            padding-top: 30px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .like-btn, 
+        .share-btn {
+            padding: 10px 20px;
+            background: var(--card-gradient);
+            border: 1px solid var(--border-lavender);
+            border-radius: 30px;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .like-btn:hover, 
+        .share-btn:hover {
+            background: var(--neon-lavender);
+            border-color: var(--neon-lavender);
+        }
+
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prev-post, 
+        .next-post {
+            color: var(--neon-lavender);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .prev-post:hover, 
+        .next-post:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2rem;
+            }
+            
+            .post-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .post-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <script src="/script.js"></script>
+</body>
+</html>
